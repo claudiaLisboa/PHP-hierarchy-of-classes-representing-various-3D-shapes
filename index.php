@@ -5,12 +5,12 @@ require_once('./Sphere.cls.php');
 
 <head>
     <meta charset='utf-8'>
-    <title>Exercice de classe #1</title>
+    <title> Hierarchy of class representing various 3D shapes</title>
 </head>
 
 <body>
-    <h1>582-31B-MA - Programmation Web avancée – Groupe 21621</h1>
-    <h2>Exercice de classe #1</h2>
+    <h1>PHP - class</h1>
+    <h2></h2>
     <?php
     $sphere1 = new Sphere(2);
     echo $sphere1 . "<br/>";
