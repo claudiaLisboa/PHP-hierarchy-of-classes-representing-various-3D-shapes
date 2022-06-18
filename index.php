@@ -70,7 +70,7 @@ function afficherComparaison($forme1, $forme2)
     // pour montrer que le tableau est bien trié.
     echo "<ul>";
     foreach ($formes as $key => $value) {
-        echo "<li>" . $key . " => " . $value . " <small>--------> DEBUG: superficie + volume = " . ($value->obtenirSuperficie() + $value->obtenirVolume()) . "</small></li>";
+        echo "<li>" . $key . " => " . $value . " <small>(superficie + volume = " . ($value->obtenirSuperficie() + $value->obtenirVolume()) . ")</small></li>";
     }
     echo "</ul>";
     ?>
