@@ -27,7 +27,7 @@ class Sphere extends Forme{
 
     public function obtenirTypeForme ()
     {
-
+        return get_class($this); 
     }
      public function obtenirSuperficie ()
     {

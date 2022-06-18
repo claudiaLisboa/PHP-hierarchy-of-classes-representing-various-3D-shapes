@@ -2,6 +2,11 @@
 require_once('./PaveDroit.cls.php');
 class Cube extends PaveDroit{
 
+    /**
+     * Properties Sphere
+     */ 
+    private $cote;
+
 
     /**
      * Constructeur de la class Cube
@@ -16,21 +21,22 @@ class Cube extends PaveDroit{
      */
     public function obtenirTypeForme ()
     {
-
+        return get_class($this); 
     }
-     public function obtenirSuperficie ()
+    public function obtenirSuperficie ()
     {
 
     }
 
-     public function obtenirVolume()
-     {
+    public function obtenirVolume()
+    {
 
-     }
+    }
 
-     public function __toString()
-     {
-         
-     }
+    public function __toString()
+    {
+
+    }
+
 }
 ?>

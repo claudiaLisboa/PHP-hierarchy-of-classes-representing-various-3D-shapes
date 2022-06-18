@@ -32,8 +32,10 @@ abstract class Forme{
 
     public function __toString()
     {
-        
+       
     }
+
+    
     public function comparerAvec ($f)
     {
         $premierForme = $this->obtenirSuperficie()+$this->obtenirVolume();
@@ -41,13 +43,11 @@ abstract class Forme{
 
         return $secondeForme - $premierForme;
     }
-    abstract public function obtenirTypeForme ();
+    //la implementation des methodes abstract  se trouvent dans les sous class (class enfant)
+    abstract public function obtenirTypeForme (); 
    
     abstract public function obtenirSuperficie ();
   
     abstract public function obtenirVolume();
-     
-
-    
 }
 ?>

@@ -5,15 +5,16 @@ class PaveDroit extends Forme{
     /**
      * Properties PaveDroit
      */ 
-    public $longueur;
-    public $largeur;
-    public $hauteur;
+    private $longueur;
+    private $largeur;
+    private $hauteur;
 
     /**
      * Constructeur de la class PaveDroit
      */
-    function __construct($longueur, $largeur, $hauteur )
+    public function __construct($longueur, $largeur, $hauteur)
     {
+        parent::__construct();
         $this->longueur = $longueur; 
         $this->largeur = $largeur; 
         $this->hauteur = $hauteur; 
@@ -22,35 +23,48 @@ class PaveDroit extends Forme{
     /**
      * Methodes de la class PaveDroit
      */
-    function get_longueur() 
+    public function getLongueur() 
     {
         return $this->longueur;
     }
-    function get_largeur() {
+
+    public function getLargeur() {
         return $this->largeur;
     }
-    function get_hauteur() {
+
+    public function getHauteur() {
         return $this->hauteur;
     }
+
     public function obtenirTypeForme ()
     {
-
+        return get_class($this); 
     }
-     public function obtenirSuperfice ()
+    public function obtenirSuperficie ()
     {
-
+        $superficie = 2 * (($this->largeur * $this->longueur) 
+                         + ($this->longueur * $this->hauteur) 
+                         + ($this->largeur * $this->hauteur));
+        return round($superficie, 2);
     }
 
-     public function obtenirVolume()
-     {
+    public function obtenirVolume()
+    {
+        $volume = $this->largeur * $this->longueur * $this->hauteur;
+        return round($volume, 2);
+    }
 
-     }
-
-     public function __toString()
-     {
-         
-     }
-
+    public function __toString()
+    {
+        return $this->obtenirTypeForme()
+              ." , id = " . $this->id
+              ." , superficie = " . $this->obtenirSuperficie()
+              ." , volume = " . $this->obtenirVolume()
+              ." , longueur = " . $this->getLongueur()
+              ." , largeur = " . $this->getLargeur()
+              ." , hauteur = " . $this->getHauteur()
+              ."." ;
+    }
 
 }
 ?>
