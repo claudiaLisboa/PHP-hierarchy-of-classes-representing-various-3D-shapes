@@ -21,37 +21,28 @@ function comparerFormes($forme1, $forme2)
 {
     $result = $forme1->comparerAvec($forme2);
     return $result;
-    // if ($result < 0) {
-    //     echo "La forme " . $forme1 . " est plus grande que la forme " . $forme2 . ".<br/>";
-    // } elseif ($result > 0) {
-    //     echo "La forme " . $forme1 . " est plus petite que la forme " . $forme2 . ".<br/>";
-    // } else {
-    //     echo "Les formes " . $forme1 . " et " . $forme2 . " sont considerées égales.<br/>";
-    // }
 }
 
-// function comparerFormes($forme1, $forme2)
-// {
-//     global $formes;
+function afficherComparaison($forme1, $forme2)
+{
+    global $formes;
 
-//     $result = $formes[$forme1]->comparerAvec($formes[$forme2]);
+    $result = $formes[$forme1]->comparerAvec($formes[$forme2]);
 
-//     // if ($result < 0) {
-//     //     echo "La forme " . $forme1 . " est plus grande que la forme " . $forme2 . ".<br/>";
-//     // } elseif ($result > 0) {
-//     //     echo "La forme " . $forme1 . " est plus petite que la forme " . $forme2 . ".<br/>";
-//     // } else {
-//     //     echo "Les formes " . $forme1 . " et " . $forme2 . " sont considerées égales.<br/>";
-//     // }
-// }
+    if ($result < 0) {
+        echo "La forme " . $forme1 . " est plus grande que la forme " . $forme2 . ".<br/>";
+    } elseif ($result > 0) {
+        echo "La forme " . $forme1 . " est plus petite que la forme " . $forme2 . ".<br/>";
+    } else {
+        echo "Les formes " . $forme1 . " et " . $forme2 . " sont considerées égales.<br/>";
+    }
+}
 ?>
 <html>
-
 <head>
     <meta charset='utf-8'>
     <title>Exercice de classe #1</title>
 </head>
-
 <body>
     <h1>582-31B-MA - Programmation Web avancée – Groupe 21621</h1>
     <h2>Exercice de classe #1</h2>
@@ -65,9 +56,9 @@ function comparerFormes($forme1, $forme2)
 
     echo "<br/>";
     echo 'b) 3 comparaisons de formes différentes:<br/>';
-    // comparerFormes("sphere1", "sphere2");
-    // comparerFormes("cylindre1", "cylindre2");
-    // comparerFormes("cube1", "cube1");
+    afficherComparaison("sphere2", "sphere1");
+    afficherComparaison("cylindre1", "cylindre2");
+    afficherComparaison("cube1", "cube2");
 
     echo "<br/>";
     echo 'c) Tableau $formes trié en ordre descendante:<br/>';
@@ -79,7 +70,7 @@ function comparerFormes($forme1, $forme2)
     // pour montrer que le tableau est bien trié.
     echo "<ul>";
     foreach ($formes as $key => $value) {
-        echo "<li>" . $key . " => " . $value . " [DEBUG: superficie + volume = " . ($value->obtenirSuperficie() + $value->obtenirVolume()) . "]</li>";
+        echo "<li>" . $key . " => " . $value . " <small>--------> DEBUG: superficie + volume = " . ($value->obtenirSuperficie() + $value->obtenirVolume()) . "</small></li>";
     }
     echo "</ul>";
     ?>
